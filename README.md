@@ -2,6 +2,18 @@
 
 A lightweight js framework for easy dropdowns—and more UI components coming soon
 
+## Installation
+
+#### CSS
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gudiudi/bloopstrap@main/dist/bloopstrap.min.css">
+```
+
+#### JS
+```html
+<script src="https://cdn.jsdelivr.net/gh/gudiudi/bloopstrap@main/dist/bloopstrap.min.js"></script>
+```
+
 ## Usage
 
 ```html
@@ -19,4 +31,3 @@ A lightweight js framework for easy dropdowns—and more UI components coming so
 
 1. [ ] More Components – modals, tooltips, tabs, and more
 2. [ ] Better Accessibility
-3. [ ] CDN Version
