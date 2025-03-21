@@ -1,4 +1,4 @@
-class App {
+export default class App {
 	static #components = {};
 
 	static register(toggle, component) {
@@ -12,5 +12,3 @@ class App {
 		});
 	}
 }
-
-App.init();

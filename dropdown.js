@@ -1,4 +1,4 @@
-class Dropdown {
+export default class Dropdown {
 	static #instances = new WeakMap();
 
 	constructor(dropdown) {
@@ -25,5 +25,3 @@ class Dropdown {
 		}
 	}
 }
-
-App.register("dropdown", Dropdown);
