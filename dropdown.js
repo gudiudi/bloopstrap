@@ -1,5 +1,5 @@
 class Dropdown {
-	static #instances = new Map();
+	static #instances = new WeakMap();
 
 	constructor(dropdown) {
 		this.dropdown = dropdown;
@@ -9,20 +9,21 @@ class Dropdown {
 		this.dropdown.classList.toggle("show");
 	}
 
-	static init() {
-		document.addEventListener("click", (e) => {
-			if (e.target.matches(".dropdown-toggle")) {
-				const menu = e.target.nextElementSibling;
+	static #getInstance(menu) {
+		if (!Dropdown.#instances.has(menu)) {
+			Dropdown.#instances.set(menu, new Dropdown(menu));
+		}
 
-				if (!Dropdown.#instances.has(menu)) {
-					Dropdown.#instances.set(menu, new Dropdown(menu));
-				}
+		return Dropdown.#instances.get(menu);
+	}
 
-				const dropdown = Dropdown.#instances.get(menu);
-				dropdown.toggle();
-			}
-		});
+	static handleEvent(target) {
+		const menu = target.nextElementSibling;
+		if (menu) {
+			const dropdown = Dropdown.#getInstance(menu);
+			dropdown.toggle();
+		}
 	}
 }
 
-Dropdown.init();
+App.register("dropdown", Dropdown);
