@@ -2,7 +2,6 @@
 
 A lightweight js framework for easy dropdowns—and more UI components coming soon
 
-
 ## Usage
 
 ```html
