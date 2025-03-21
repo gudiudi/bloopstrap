@@ -1,0 +1,30 @@
+{
+	"name": "Bloopstrap",
+	"version": "1.0.0",
+	"description": "A lightweight js framework for easy dropdowns—and more UI components coming soon",
+	"main": "dist/js/bloopstrap.min.js",
+	"style": "dist/css/bloopstrap.min.css",
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gudiudi/dropdown-menu.git"
+	},
+	"keywords": ["css framework"],
+	"author": "gudiudi",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gudiudi/dropdown-menu/issues"
+	},
+	"homepage": "https://github.com/gudiudi/dropdown-menu#readme",
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.3",
+		"postcss-cli": "^11.0.1",
+		"rollup": "^4.36.0",
+		"rollup-plugin-postcss": "^4.0.2"
+	}
+}
