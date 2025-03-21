@@ -1,5 +1,5 @@
 {
-	"name": "Bloopstrap",
+	"name": "bloopstrap",
 	"version": "1.0.0",
 	"description": "A lightweight js framework for easy dropdowns—and more UI components coming soon",
 	"main": "dist/js/bloopstrap.min.js",
