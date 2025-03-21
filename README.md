@@ -31,3 +31,4 @@ A lightweight js framework for easy dropdowns—and more UI components coming so
 
 1. [ ] More Components – modals, tooltips, tabs, and more
 2. [ ] Better Accessibility
+3. [ ] Publish as a npm package
