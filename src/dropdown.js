@@ -3,6 +3,7 @@ export default class Dropdown {
 
 	constructor(dropdown) {
 		this.dropdown = dropdown;
+		Dropdown.#instances.set(dropdown, this);
 	}
 
 	toggle() {

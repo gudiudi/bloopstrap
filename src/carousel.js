@@ -3,10 +3,11 @@ export default class Carousel {
 
 	constructor(carousel) {
 		this.carousel = carousel;
+		Carousel.#instances.set(carousel, this);
 	}
 
-	static #getSlidesData(instance) {
-		const carouselInner = instance.carousel.querySelector(".carousel-inner");
+	#getSlidesData() {
+		const carouselInner = this.carousel.querySelector(".carousel-inner");
 		const slidesNode = carouselInner.querySelectorAll(".carousel-item");
 		const currentSlideIndex = Array.from(slidesNode).findIndex((node) =>
 			node.classList.contains("active"),
@@ -15,16 +16,16 @@ export default class Carousel {
 		return [currentSlideIndex, slidesNode];
 	}
 
-	static prev(instance) {
-		const [currentSlideIndex, slidesNode] = Carousel.#getSlidesData(instance);
+	prev() {
+		const [currentSlideIndex, slidesNode] = this.#getSlidesData();
 		slidesNode[currentSlideIndex].classList.remove("active");
 		slidesNode[
 			(currentSlideIndex - 1 + slidesNode.length) % slidesNode.length
 		].classList.add("active");
 	}
 
-	static next(instance) {
-		const [currentSlideIndex, slidesNode] = Carousel.#getSlidesData(instance);
+	next() {
+		const [currentSlideIndex, slidesNode] = this.#getSlidesData();
 		slidesNode[currentSlideIndex].classList.remove("active");
 		slidesNode[(currentSlideIndex + 1) % slidesNode.length].classList.add(
 			"active",
@@ -40,11 +41,10 @@ export default class Carousel {
 	}
 
 	static handleEvent(target) {
-		const controls = {
-			prev: Carousel.prev,
-			next: Carousel.next,
-		};
-		const instance = Carousel.#getInstance(target.closest(".carousel"));
-		controls[target.dataset.slide](instance);
+		const action = target.dataset.slide;
+		if (action) {
+			const instance = Carousel.#getInstance(target.closest(".carousel"));
+			instance[action]();
+		}
 	}
 }
