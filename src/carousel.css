@@ -1,5 +1,6 @@
 .carousel {
 	position: relative;
+	width: fit-content;
 }
 
 .carousel-item {
