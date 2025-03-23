@@ -5,17 +5,46 @@ export default class Carousel {
 		this.carousel = carousel;
 	}
 
-	static #previous() {}
-
-	static #next() {}
-
-	static #getInstance(menu) {
-		if (!Carousel.#instances.has(menu)) {
-			Carousel.#instances.set(menu, new Carousel(menu));
-		}
-
-		return Carousel.#instances.get(menu);
+	static #getSlidesData(instance) {
+		const carouselInner = instance.carousel.querySelector(".carousel-inner");
+		const slidesNode = carouselInner.querySelectorAll(".carousel-item");
+		const currentSlideIndex = Array.from(slidesNode).findIndex((node) =>
+			node.classList.contains("active"),
+		);
+		console.log(currentSlideIndex);
+		return [currentSlideIndex, slidesNode];
 	}
 
-	static handleEvent(target) {}
+	static prev(instance) {
+		const [currentSlideIndex, slidesNode] = Carousel.#getSlidesData(instance);
+		slidesNode[currentSlideIndex].classList.remove("active");
+		slidesNode[
+			(currentSlideIndex - 1 + slidesNode.length) % slidesNode.length
+		].classList.add("active");
+	}
+
+	static next(instance) {
+		const [currentSlideIndex, slidesNode] = Carousel.#getSlidesData(instance);
+		slidesNode[currentSlideIndex].classList.remove("active");
+		slidesNode[(currentSlideIndex + 1) % slidesNode.length].classList.add(
+			"active",
+		);
+	}
+
+	static #getInstance(carousel) {
+		if (!Carousel.#instances.has(carousel)) {
+			Carousel.#instances.set(carousel, new Carousel(carousel));
+		}
+
+		return Carousel.#instances.get(carousel);
+	}
+
+	static handleEvent(target) {
+		const controls = {
+			prev: Carousel.prev,
+			next: Carousel.next,
+		};
+		const instance = Carousel.#getInstance(target.closest(".carousel"));
+		controls[target.dataset.slide](instance);
+	}
 }

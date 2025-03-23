@@ -20,8 +20,8 @@ export default class Dropdown {
 	static handleEvent(target) {
 		const menu = target.nextElementSibling;
 		if (menu) {
-			const dropdown = Dropdown.#getInstance(menu);
-			dropdown.toggle();
+			const instance = Dropdown.#getInstance(menu);
+			instance.toggle();
 		}
 	}
 }
