@@ -1,6 +1,6 @@
 # Bloopstrap
 
-A lightweight js framework for easy dropdowns—and more UI components coming soon
+A lightweight js framework for easy dropdowns, carousels, and more UI components coming soon
 
 ## Installation
 
@@ -15,7 +15,7 @@ A lightweight js framework for easy dropdowns—and more UI components coming so
 ```
 
 ## Usage
-
+#### Dropdown
 ```html
 <div class="dropdown">
   <button class="btn" type="button" data-toggle="dropdown">Dropdown</button>
@@ -24,6 +24,29 @@ A lightweight js framework for easy dropdowns—and more UI components coming so
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
   </div>
+</div>
+```
+
+#### Carousel
+```html
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="..." width="300" height="200">
+    </div>
+    <div class="carousel-item active">
+      <img src="..." width="300" height="200">
+    </div>
+    <div class="carousel-item">
+      <img src="..." width="300" height="200">
+    </div>
+  </div>
+  <a class="carousel-control-prev" role="button" data-slide="prev" data-toggle="carousel">
+    Previous
+  </a>
+  <a class="carousel-control-next" role="button" data-slide="next" data-toggle="carousel">
+    Next
+  </a>
 </div>
 ```
 
