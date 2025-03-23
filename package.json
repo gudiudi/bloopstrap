@@ -10,15 +10,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gudiudi/dropdown-menu.git"
+		"url": "git+https://github.com/gudiudi/bloopstrap.git"
 	},
 	"keywords": ["css framework"],
 	"author": "gudiudi",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/gudiudi/dropdown-menu/issues"
+		"url": "https://github.com/gudiudi/bloopstrap/issues"
 	},
-	"homepage": "https://github.com/gudiudi/dropdown-menu#readme",
+	"homepage": "https://github.com/gudiudi/bloopstrap#readme",
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
 		"autoprefixer": "^10.4.21",
