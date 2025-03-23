@@ -1,4 +1,5 @@
 biome.json
 index.html
 style.css
-node_modules/
+node_modules/index.html
+style.css
